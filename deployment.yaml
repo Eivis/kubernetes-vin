@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: hellovin
+  name: hellovin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hellovin
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: hellovin
+    spec:
+      imagePullSecrets:
+      - name: dregistrykey
+      containers:
+      - image: vilkaspilka5/goapp:latest
+        name: gohello
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hellovin-http
+spec:
+  selector:
+    app: hellovin
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: NodePort
