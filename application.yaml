@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/Eivis/goapp.git 
+    repoURL: https://github.com/Eivis/kubernetes-vin.git 
     targetRevision: HEAD
     path: ""
   destination:
