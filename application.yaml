@@ -14,8 +14,8 @@ spec:
     namespace: myapp
   syncPolicy:
     syncOptions:
-    - CreateNamespace=true
+    - CreateNamespace=true # create namespace if not present in the cluster
     automated:
-      selfHeal: true
-      prune: true 
+      selfHeal: true # overwrite any drift happening
+      prune: true # delete files in the cluster upon deletion on the repo
 
