@@ -51,3 +51,15 @@ This repo contains Kubernetes manifest for deploying the [goapp](https://github.
    ```
 
 6. Check argocd UI for created deployments and services
+7. Once deployed you can access the goapp
+
+   You can similarly portforward with `kubectl` or use minikube inbuilt commands:
+
+   Check services:
+   ```bash
+   minikube service list
+   ```
+   Create tunnel:
+   ```bash
+   minikube service hellovin-http -n myapp
+   ```
