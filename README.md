@@ -36,6 +36,7 @@ This repo contains Kubernetes manifest for deploying the [goapp](https://github.
    ```
    
 4. Access argocd UI
+   
    Portforward to local machine
    ```bash
    kubectl port-forward svc/argocd-server -n argocd 8081:443
