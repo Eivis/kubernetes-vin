@@ -1,10 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
+  name: hellovin
   labels:
     app: hellovin
-  name: hellovin
 spec:
   replicas: 1
   selector:
@@ -13,7 +12,6 @@ spec:
   strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: hellovin
     spec:
@@ -24,8 +22,6 @@ spec:
         name: gohello
         ports:
         - containerPort: 80
-        resources: {}
-status: {}
 
 ---
 apiVersion: v1
