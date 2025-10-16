@@ -18,7 +18,7 @@ spec:
       imagePullSecrets:
       - name: dregistrykey
       containers:
-      - image: vilkaspilka5/goapp:ee79c68
+      - image: vilkaspilka5/goapp:98920ae
         name: gohello
         ports:
         - containerPort: 80
