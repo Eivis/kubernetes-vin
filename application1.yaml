@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-argo-application
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Eivis/kubernetes-vin.git 
+    targetRevision: HEAD
+    path: deployment1
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: myapp1
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true # create namespace if not present in the cluster
+    automated:
+      selfHeal: true # overwrite any drift happening
+      prune: true # delete files in the cluster upon deletion on the repo
